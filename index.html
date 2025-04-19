@@ -20,13 +20,49 @@
   margin-bottom: 20px;
 }
 
-      .navbar select {
-        margin: 10px;
-        padding: 5px 10px;
-        background-color: rgb(22, 170, 22);
-        border-radius: 6px;
-        border: 1px solid #ccc;
-      }      
+.navbar {
+    background-color: #f4f4f4;
+    padding: 10px 20px;
+    display: flex;
+    gap: 20px;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropbtn {
+    background-color: #318124;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'EeyekAkaba';
+    font-size: 28px;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown-content a {
+    color: #2f4f4f;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown:hover .dropbtn {
+    background-color: #556b6b;
+  }   
     body {
       display: flex;
       flex-direction: column;
@@ -123,16 +159,21 @@
 <body>
     <div>
         <div class="navbar">
-            <select onchange="location = this.value;">
-                <option selected disabled>wareH</option>
-                <option value="#Wari">tPtagi wari</option>
-              </select>
-              <select onchange="location = this.value;">
-                <option selected disabled>sEreH</option>
-                <option value="#pun">puN</option>
-                <option value="#Sangai">sZaI</option>
-              </select>
-        </div>
+            <div class="dropdown">
+              <button class="dropbtn">wareH</button>
+              <div class="dropdown-content">
+                <a href="#Wari">tPtagi wari</a>
+              </div>
+            </div>
+          
+            <div class="dropdown">
+              <button class="dropbtn">sEreH</button>
+              <div class="dropdown-content">
+                <a href="#pun">puN</a>
+                <a href="#Sangai">sZaI</a>
+              </div>
+            </div>
+          </div>
         <div class="Wareng" id="Wari">
             <div class="centered-section">
                 <b>tPtagi wari</b>
